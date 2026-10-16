@@ -1,0 +1,432 @@
+{
+  "sites": [
+    {
+      "key": "fwd_javxx",
+      "name": "123AV",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Javxx_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_57cg",
+      "name": "57吃瓜",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/CG57_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_91crdj",
+      "name": "91成人短剧",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Crdj_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_flickreels",
+      "name": "FlickReels",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/FlickReels_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_jable",
+      "name": "Jable",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Jable_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_missav",
+      "name": "MissAV",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/MissAV_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://missav.com/favicon.ico"
+    },
+    {
+      "key": "fwd_pornhub",
+      "name": "Pornhub",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Pornhub_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://www.pornhub.com/favicon.ico"
+    },
+    {
+      "key": "fwd_supjav",
+      "name": "SupJAV",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/SupJAV_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_xvideos",
+      "name": "Xvideos",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Xvideos_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://www.xvideos.com/favicon-32x32.png"
+    },
+    {
+      "key": "fwd_juwu",
+      "name": "剧屋",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/juwu_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_chengguo",
+      "name": "橙果短剧",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Chengguo_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_ikanbot",
+      "name": "爱看机器人",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Ikanbot_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://www1.ikanbot.com/favicon.ico"
+    },
+    {
+      "key": "fwd_guazi",
+      "name": "瓜子影视",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Guazi_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_jinguoduanju",
+      "name": "禁果短剧",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/JingGuo_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_huangju",
+      "name": "红果黄剧",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Huangju_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_huadu",
+      "name": "花都影院",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Huadu_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_jianpian",
+      "name": "荐片",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Jianpian_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://xiazai.xznkjzx.cn/soft/jianpian/img/logo.png"
+    },
+    {
+      "key": "fwd_mitao",
+      "name": "蜜桃视频",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Mitao_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_bianfu",
+      "name": "蝙蝠视频",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Bianfu_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_yeguodj",
+      "name": "野果短剧",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Yeguo_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_hanju84",
+      "name": "韩剧巴士",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Hanju84_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://www.hanju84.cc/favicon.ico"
+    },
+    {
+      "key": "fwd_madou",
+      "name": "麻豆",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Madou_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_huangguoai",
+      "name": "黄果",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Huangguo_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
+      "key": "fwd_huangdou",
+      "name": "黄豆短剧",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Huangdou_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://tideember.cc/favicon.ico"
+    },
+    {
+      "key": "fwd_muou",
+      "name": "木偶",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/Muou_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    }
+  ],
+  "parses": [],
+  "flags": [],
+  "ads": []
+}

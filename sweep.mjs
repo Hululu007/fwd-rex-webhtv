@@ -1,0 +1,77 @@
+/**
+ * 全量巡检：把订阅清单里的每个 widget 都跑一遍 home → category → detail → play，
+ * 输出一张通过/失败表。
+ *   node sweep.mjs [--limit=25] [--search=词] [--json=out.json]
+ */
+import fs from "node:fs";
+import { spider } from "./shim.mjs";
+
+const argv = process.argv.slice(2);
+const opt = (name, def) => {
+  const hit = argv.find((a) => a.startsWith("--" + name + "="));
+  return hit ? hit.split("=").slice(1).join("=") : def;
+};
+const sub = opt("sub", "https://fwd.uou.qzz.io/widgets.rex");
+const limit = parseInt(opt("limit", "25"), 10);
+const searchKey = opt("search", "");
+const outFile = opt("json", "");
+
+const manifest = await (await fetch(sub)).json();
+const widgets = (manifest.widgets || []).slice(0, limit);
+const rows = [];
+
+for (const w of widgets) {
+  const row = { id: w.id, title: w.title, url: w.url, home: 0, cat: 0, detail: "", play: "", ms: 0, err: "" };
+  const t0 = Date.now();
+  try {
+    spider.init({ url: w.url });
+    const home = JSON.parse(await spider.home());
+    row.home = (home.class || []).length;
+    const cat = JSON.parse(await spider.category("0", "1", false, {}));
+    row.cat = (cat.list || []).length;
+    const first = (cat.list || [])[0];
+    if (first) {
+      const detail = JSON.parse(await spider.detail(first.vod_id));
+      const item = (detail.list || [])[0];
+      if (item) {
+        const groups = String(item.vod_play_url).split("$$$");
+        row.detail = `${item.vod_play_from.split("$$$").length}线路/${groups[0].split("#").length}集`;
+        const epId = groups[0].split("#")[0].split("$").slice(1).join("$");
+        const play = JSON.parse(await spider.play("", epId, []));
+        row.play = play.url ? String(play.url).slice(0, 60) : "空地址";
+      } else {
+        row.detail = "无详情条目";
+        row.err = detail.msg || "";
+      }
+    } else {
+      row.err = cat.msg || "分类为空";
+    }
+    if (searchKey) {
+      const res = JSON.parse(await spider.search(searchKey, true, "1"));
+      row.err = row.err || `search=${res.list.length}`;
+    }
+  } catch (e) {
+    row.err = String((e && e.message) || e);
+  }
+  row.ms = Date.now() - t0;
+  rows.push(row);
+  console.log(
+    `${row.title.padEnd(14)} home=${String(row.home).padStart(2)} cat=${String(row.cat).padStart(3)} detail=${(row.detail || "-").padEnd(12)} ${row.ms}ms  ${row.err}`
+  );
+}
+
+console.log(
+  "\n汇总：" +
+    rows.filter((r) => r.play && r.play !== "空地址").length +
+    "/" +
+    rows.length +
+    " 可播，" +
+    rows.filter((r) => r.cat > 0).length +
+    "/" +
+    rows.length +
+    " 分类可用"
+);
+if (outFile) {
+  fs.writeFileSync(outFile, JSON.stringify(rows, null, 2));
+  console.log("结果已写入 " + outFile);
+}

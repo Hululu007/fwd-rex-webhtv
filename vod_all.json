@@ -1,0 +1,17 @@
+{
+  "sites": [
+    {
+      "key": "fwd_all",
+      "name": "宝宝巴士乐园",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "sub": "https://fwd.uou.qzz.io/widgets.rex"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1
+    }
+  ],
+  "parses": []
+}
