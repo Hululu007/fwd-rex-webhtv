@@ -16,14 +16,16 @@ const opt = (name, def) => {
   return hit ? hit.split("=").slice(1).join("=") : def;
 };
 const sub = opt("sub", "https://fwd.uou.qzz.io/widgets.rex");
-const limit = parseInt(opt("limit", "25"), 10);
+const limit = parseInt(opt("limit", "0"), 10); // 0 = 清单里有多少就查多少
 const searchKey = opt("search", "");
 const outFile = opt("json", "");
 const mdFile = opt("md", "");
 
 const manifest = await (await fetch(sub)).json();
-const widgets = (manifest.widgets || []).slice(0, limit);
+const all = manifest.widgets || [];
+const widgets = limit > 0 ? all.slice(0, limit) : all;
 const rows = [];
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 for (const w of widgets) {
   const row = { id: w.id, title: w.title, url: w.url, home: 0, cat: 0, detail: "", play: "", ms: 0, err: "" };
@@ -32,7 +34,13 @@ for (const w of widgets) {
     spider.init({ url: w.url });
     const home = JSON.parse(await spider.home());
     row.home = (home.class || []).length;
-    const cat = JSON.parse(await spider.category("0", "1", false, {}));
+    let cat = JSON.parse(await spider.category("0", "1", false, {}));
+    if (!(cat.list || []).length) {
+      // 网络抖动常见：空结果再给一次机会
+      await sleep(1200);
+      cat = JSON.parse(await spider.category("0", "1", false, {}));
+      if ((cat.list || []).length) row.err = "首查为空，重试成功";
+    }
     row.cat = (cat.list || []).length;
     const first = (cat.list || [])[0];
     if (first) {

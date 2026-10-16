@@ -12,7 +12,12 @@ const opt = (name, def) => {
   return hit ? hit.split("=").slice(1).join("=") : def;
 };
 const subMode = argv.includes("--sub") || !target;
-const ext = subMode ? { sub: opt("sub", "https://fwd.uou.qzz.io/widgets.rex") } : { url: target };
+const extra = opt("extra", null);
+const ext = subMode
+  ? { sub: opt("sub", "https://fwd.uou.qzz.io/widgets.rex") }
+  : { url: target };
+if (extra) ext.extra = JSON.parse(extra);
+if (opt("name", null)) ext.name = opt("name", null);
 
 const t0 = Date.now();
 spider.init(ext);

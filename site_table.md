@@ -1,7 +1,7 @@
 # 宝宝巴士乐园 · WebHTV 站点一览
 
 订阅清单：`https://fwd.uou.qzz.io/widgets.rex`
-生成时间：2026-10-16T07:40:00.764Z
+生成时间：2026-10-16T08:53:20.640Z
 适配器：`./fwd_rex.js`
 
 | 站点名 | key | 模块版本 | 原始模块地址 |
@@ -9,7 +9,8 @@
 | 123AV | `fwd_javxx` | 1.3.0 | `https://fwd.uou.qzz.io/widgets/Javxx_TuT.js` |
 | 57吃瓜 | `fwd_57cg` | 1.1.0 | `https://fwd.uou.qzz.io/widgets/CG57_TuT.js` |
 | 91成人短剧 | `fwd_91crdj` | 1.0.2 | `https://fwd.uou.qzz.io/widgets/Crdj_TuT.js` |
-| FlickReels | `fwd_flickreels` | 1.0.6 | `https://fwd.uou.qzz.io/widgets/FlickReels_TuT.js` |
+| FlickReels | `fwd_flickreels` | 1.0.7 | `https://fwd.uou.qzz.io/widgets/FlickReels_TuT.js` |
+| 134X | `fwd_134x` | 1.1.0 | `https://fwd.uou.qzz.io/widgets/X134_TuT.js` |
 | Jable | `fwd_jable` | 1.2.3 | `https://fwd.uou.qzz.io/widgets/Jable_TuT.js` |
 | MissAV | `fwd_missav` | 3.8.2 | `https://fwd.uou.qzz.io/widgets/MissAV_TuT.js` |
 | Pornhub | `fwd_pornhub` | 3.5.1 | `https://fwd.uou.qzz.io/widgets/Pornhub_TuT.js` |

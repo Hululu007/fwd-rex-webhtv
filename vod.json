@@ -69,6 +69,23 @@
       "logo": "https://fwd.uou.qzz.io/icon.png"
     },
     {
+      "key": "fwd_134x",
+      "name": "134X",
+      "type": 3,
+      "api": "./fwd_rex.js",
+      "ext": {
+        "url": "https://fwd.uou.qzz.io/widgets/X134_TuT.js"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "logo": "https://fwd.uou.qzz.io/icon.png"
+    },
+    {
       "key": "fwd_jable",
       "name": "Jable",
       "type": 3,
