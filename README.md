@@ -22,8 +22,9 @@ https://cdn.jsdelivr.net/gh/caiwenjie17-a11y/fwd-rex-webhtv@main/vod_lite.json
 
 | 配置 | 站点形态 | 适合 |
 | --- | --- | --- |
-| [`vod_lite.json`](vod_lite.json) | **15 个实测能播的站点**（本机 3 轮巡检并集） | 推荐：首页干净、点开基本都能出片 |
-| [`vod.json`](vod.json) | 26 个站点，每模块一个 | 全量；带代理/VPN 的设备上优势最大 |
+| [`vod_lite.json`](vod_lite.json) | **15 个站点**（本机无代理也行） | 手机/电视直连、不挂代理时首选 |
+| [`vod_lite_global.json`](vod_lite_global.json) | **19 个站点**（两地并集） | 设备能挂代理/VPN，多出 Pornhub、Xvideos、麻豆、黄果 |
+| [`vod.json`](vod.json) | 26 个站点，每模块一个 | 全量，含需要 Cookie/反代才能过的站点 |
 | [`vod_all.json`](vod_all.json) | 1 个站点「宝宝巴士乐园」，26 个分类 | 想集中在一个站点里；搜索会扫前 10 个模块 |
 
 > `vod.json` 里 `api` 是相对路径 `./fwd_rex.js`，两个文件必须同目录 —— 本仓库已经放好了。
@@ -32,10 +33,10 @@ https://cdn.jsdelivr.net/gh/caiwenjie17-a11y/fwd-rex-webhtv@main/vod_lite.json
 
 | 环境 | 可播 | 说明 |
 | --- | --- | --- |
-| 本机（国内，无代理） | **13/26**（3 轮并集 15/26） | 被墙域名直连返回 000，属网络侧 |
-| GitHub Runner（海外） | **19/25**（下一次含新模块会变 26） | Pornhub / Xvideos / 麻豆 / 黄果 在那边是通的 |
+| 本机（国内，无代理） | **13/26**（2 轮并集 15/26） | 被墙域名直连返回 000，属网络侧 |
+| GitHub Runner（海外） | **17/26** | Pornhub、Xvideos、麻豆、黄果 在那边是通的；橙果、野果 反而不稳 |
 
-Runner 上仍失败的是 **Cloudflare 403** 类（`123AV`、`Jable`、`SupJAV`）与站点自身反代不通（`黄豆短剧`、`花都影院`）。
+两地都会失败的：`123AV`、`Jable`、`SupJAV`（Cloudflare 403）、`MissAV`（无可用解析）、`花都影院`、`黄豆短剧`（自身反代不通）、`木偶`（依赖长时间延时重试）。
 
 ### 被 Cloudflare 拦的站点怎么救
 
@@ -68,7 +69,8 @@ Runner 上仍失败的是 **Cloudflare 403** 类（`123AV`、`Jable`、`SupJAV`�
 ```bash
 node build_config.mjs --sub=https://你的地址/widgets.rex                     # 生成 vod.json / vod_all.json
 node sweep.mjs --json=sweep_result_cn.json --md=sweep_summary_cn.md          # 本机全量巡检（清单里有几个查几个）
-node build_lite.mjs --union=sweep_result_cn.json,sweep_result3.json          # 取并集生成 vod_lite.json
+node build_lite.mjs --union=sweep_result_cn.json,sweep_result3.json          # 无代理版（vod_lite.json）
+node build_lite.mjs --union=sweep_result_cn.json,sweep_result_global.json --out=vod_lite_global.json
 node build_lite.mjs --only=fwd_hanju84,fwd_juwu                              # 或手动挑站点
 ```
 
@@ -90,13 +92,15 @@ node build_lite.mjs --only=fwd_hanju84,fwd_juwu                              # �
 | 文件 | 作用 |
 | --- | --- |
 | `fwd_rex.js` | 适配器本体（WebHTV 站点源，无外部依赖） |
-| `vod.json` / `vod_lite.json` / `vod_all.json` | 点播配置（全量 26 / 精简 15 / 单站点聚合） |
+| `vod.json` / `vod_lite.json` / `vod_lite_global.json` / `vod_all.json` | 点播配置（全量 26 / 无代理 15 / 两地并集 19 / 单站点聚合） |
 | `使用说明.md` | 详细说明：用法、映射表、巡检结果、已知限制、排错 |
 | `build_config.mjs` / `build_lite.mjs` | 从订阅清单生成配置 / 按巡检结果（可取并集）生成精简配置 |
 | `shim.mjs` `harness.mjs` `sweep.mjs` `debug.mjs` `probe_one.mjs` | 本地验证台（Node + curl 提供同步 `req`，跨平台） |
 | `push_to_github.ps1` | 本机 github.com 不通时，走 GitHub API 一键同步 |
 | `site_table.md` | 26 个站点 key / 版本 / 模块地址一览 |
-| `sweep_result_cn.json` `sweep_summary_cn.md` | 本机巡检基线与汇总 |
+| `sweep_result_cn.json` `sweep_summary_cn.md` `sweep_result3.json` | 本机巡检基线（生成 vod_lite 的依据） |
+| `sweep_result_global.json` | GitHub Runner 侧巡检结果存档 |
+| `sweep_result.json` `sweep_summary.md` | **由 Action 托管**，每次巡检自动更新，本地别覆盖 |
 
 ## 本地自测（Node）
 
