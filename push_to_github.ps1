@@ -63,8 +63,13 @@ foreach ($f in $files) {
   $tree += @{ path = $rel; mode = '100644'; type = 'blob'; sha = $blob.sha }
   Write-Host ("  blob {0} ({1} B)" -f $rel, $f.Length)
 }
-# 顺手删掉 bootstrap 占位文件
-$tree += @{ path = '.bootstrap'; mode = '100644'; type = 'blob'; sha = $null }
+# 顺手删掉 bootstrap 占位文件（只在该文件确实存在时提交删除项，否则 GitHub 会回 BadObjectState）
+$hasBootstrap = $false
+try {
+  Api GET "$api/contents/.bootstrap?ref=$Branch" | Out-Null
+  $hasBootstrap = $true
+} catch { }
+if ($hasBootstrap) { $tree += @{ path = '.bootstrap'; mode = '100644'; type = 'blob'; sha = $null } }
 
 # 3) tree → commit → 快进 ref
 $treeRes = Api POST "$api/git/trees" @{ base_tree = $baseTree; tree = @($tree) }
