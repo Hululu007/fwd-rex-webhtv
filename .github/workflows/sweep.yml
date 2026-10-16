@@ -1,0 +1,68 @@
+name: sweep
+
+# 每次 push 自动跑一遍 25 站巡检，把结果写进 Job Summary，并把 sweep_result.json /
+# sweep_summary.md 的变化提交回仓库（提交信息带 [skip ci]，避免自触发循环）。
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'sweep_result.json'
+      - 'sweep_summary.md'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 20 * * *' # 每天 04:00 (UTC+8)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sweep-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 环境检查
+        run: |
+          node --version
+          curl --version | head -1
+
+      - name: 跑 25 站巡检
+        continue-on-error: true
+        run: |
+          node sweep.mjs --json=sweep_result.json --md=sweep_summary.md
+
+      - name: 上传结构化结果
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sweep-result
+          path: |
+            sweep_result.json
+            sweep_summary.md
+          if-no-files-found: warn
+
+      - name: 提交结果变化
+        if: always()
+        run: |
+          if [ ! -f sweep_result.json ]; then
+            echo "没有生成结果，跳过提交"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "结果无变化"
+          else
+            git commit -m "chore(sweep): 自动更新巡检结果 [skip ci]"
+            git push
+          fi

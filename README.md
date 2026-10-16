@@ -20,36 +20,50 @@ https://raw.githubusercontent.com/caiwenjie17-a11y/fwd-rex-webhtv/main/vod.json
 https://cdn.jsdelivr.net/gh/caiwenjie17-a11y/fwd-rex-webhtv@main/vod.json
 ```
 
-两种配置：
+三种配置，按需选一个（地址只换文件名）：
 
 | 配置 | 站点形态 | 适合 |
 | --- | --- | --- |
-| [`vod.json`](vod.json) | 25 个站点，每个模块一个 | 推荐：站点列表干净、可单独禁用、首页只加载 1 个 JS |
+| [`vod.json`](vod.json) | 25 个站点，每个模块一个 | 全量体验 |
+| [`vod_lite.json`](vod_lite.json) | **13 个实测能播的站点** | 推荐：首页干净、点开基本都能出片 |
 | [`vod_all.json`](vod_all.json) | 1 个站点「宝宝巴士乐园」，25 个分类 | 想集中在一个站点里；搜索会扫前 10 个模块 |
 
 > `vod.json` 里 `api` 是相对路径 `./fwd_rex.js`，两个文件必须同目录 —— 本仓库已经放好了。
 
-## 换订阅源
+## 换订阅源 / 重新生成配置
 
 任何返回 `{"widgets":[{"url":"....js"}]}` 的清单都能直接用：
 
-```powershell
-node build_config.mjs --sub=https://你的地址/widgets.rex
+```bash
+node build_config.mjs --sub=https://你的地址/widgets.rex   # 重新生成 vod.json / vod_all.json
+node sweep.mjs --json=sweep_result.json --md=sweep_summary.md   # 25 站巡检
+node build_lite.mjs                                        # 按巡检结果生成 vod_lite.json
+node build_lite.mjs --only=fwd_hanju84,fwd_juwu            # 或手动挑站点
 ```
 
-或单站点聚合模式：把 `ext.sub` 改成你的订阅地址即可（见 `vod_all.json`）。
-单个模块也行：`"ext": { "url": "https://.../Xxx_TuT.js" }`。
+单站点聚合模式：把 `ext.sub` 改成你的订阅地址；单个模块：`"ext": { "url": "https://.../Xxx_TuT.js" }`。
+
+## 自动巡检（GitHub Actions）
+
+[`.github/workflows/sweep.yml`](.github/workflows/sweep.yml) 会在 **push / 手动触发 / 每天定时** 跑一遍 25 站巡检：
+
+- 结果表格写进 **Job Summary**，同时作为 artifact（`sweep-result`）留档；
+- 变化时把 `sweep_result.json` + `sweep_summary.md` 提交回仓库（提交信息带 `[skip ci]`，不会自触发）。
+
+> Runner 在海外，被墙站点（MissAV / Pornhub / Jable …）在那边往往反而是通的 —— 交叉参考两地结果即可。
+> `vod_lite.json` 是按**本机无代理**那次巡检生成的，所以刻意没放进自动更新，避免被海外结果带偏。
 
 ## 目录
 
 | 文件 | 作用 |
 | --- | --- |
 | `fwd_rex.js` | 适配器本体（WebHTV 站点源，无外部依赖） |
-| `vod.json` / `vod_all.json` | 点播配置（25 站点 / 单站点聚合） |
+| `vod.json` / `vod_lite.json` / `vod_all.json` | 点播配置（全量 / 精简 / 单站点聚合） |
 | `使用说明.md` | 详细说明：用法、映射表、巡检结果、已知限制、排错 |
-| `build_config.mjs` | 从订阅清单重新生成配置 |
+| `build_config.mjs` / `build_lite.mjs` | 从订阅清单生成配置 / 按巡检结果生成精简配置 |
 | `shim.mjs` `harness.mjs` `sweep.mjs` `debug.mjs` `probe_one.mjs` | 本地验证台（Node + curl 提供同步 `req`） |
-| `site_table.md` `sweep_result3.json` | 站点一览 / 最近一次 25 站全量巡检结果 |
+| `push_to_github.ps1` | 本机 github.com 不通时，走 GitHub API 一键同步 |
+| `site_table.md` `sweep_result.json` `sweep_summary.md` | 站点一览 / 巡检结构化结果 / 巡检 markdown 汇总 |
 
 ## 本地自测（Node）
 

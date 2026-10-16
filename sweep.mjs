@@ -1,7 +1,11 @@
 /**
- * 全量巡检：把订阅清单里的每个 widget 都跑一遍 home → category → detail → play，
- * 输出一张通过/失败表。
- *   node sweep.mjs [--limit=25] [--search=词] [--json=out.json]
+ * 全量巡检：把订阅清单里的每个 widget 都跑一遍 home → category → detail → play，输出通过/失败表。
+ *
+ *   node sweep.mjs [--limit=25] [--search=词] [--sub=URL] [--json=out.json] [--md=out.md]
+ *
+ * 产物：
+ *   --json=xxx.json  结构化结果（build_lite.mjs 吃这个）
+ *   --md=xxx.md      Markdown 表格（GitHub Action 写进 job summary 用）
  */
 import fs from "node:fs";
 import { spider } from "./shim.mjs";
@@ -15,6 +19,7 @@ const sub = opt("sub", "https://fwd.uou.qzz.io/widgets.rex");
 const limit = parseInt(opt("limit", "25"), 10);
 const searchKey = opt("search", "");
 const outFile = opt("json", "");
+const mdFile = opt("md", "");
 
 const manifest = await (await fetch(sub)).json();
 const widgets = (manifest.widgets || []).slice(0, limit);
@@ -38,7 +43,7 @@ for (const w of widgets) {
         row.detail = `${item.vod_play_from.split("$$$").length}线路/${groups[0].split("#").length}集`;
         const epId = groups[0].split("#")[0].split("$").slice(1).join("$");
         const play = JSON.parse(await spider.play("", epId, []));
-        row.play = play.url ? String(play.url).slice(0, 60) : "空地址";
+        row.play = play.url ? (Array.isArray(play.url) ? String(play.url[1] || play.url[0]) : String(play.url)).slice(0, 80) : "空地址";
       } else {
         row.detail = "无详情条目";
         row.err = detail.msg || "";
@@ -51,7 +56,7 @@ for (const w of widgets) {
       row.err = row.err || `search=${res.list.length}`;
     }
   } catch (e) {
-    row.err = String((e && e.message) || e);
+    row.err = String((e && e.message) || e).split("\n")[0].slice(0, 160);
   }
   row.ms = Date.now() - t0;
   rows.push(row);
@@ -60,18 +65,41 @@ for (const w of widgets) {
   );
 }
 
+const playable = rows.filter((r) => r.play && r.play !== "空地址");
 console.log(
-  "\n汇总：" +
-    rows.filter((r) => r.play && r.play !== "空地址").length +
-    "/" +
-    rows.length +
-    " 可播，" +
+  `\n汇总：${playable.length}/${rows.length} 可播，` +
     rows.filter((r) => r.cat > 0).length +
     "/" +
     rows.length +
     " 分类可用"
 );
+
+const md = [
+  `# 巡检结果 · ${manifest.title || sub}`,
+  "",
+  `- 时间：${new Date().toISOString()}`,
+  `- 清单：\`${sub}\``,
+  `- 结果：**${playable.length}/${rows.length} 可播**，${rows.filter((r) => r.cat > 0).length}/${rows.length} 分类可用`,
+  "",
+  "| 站点 | 可播 | 首页栏目 | 分类条目 | 详情 | 耗时 | 备注 |",
+  "| --- | :---: | :---: | :---: | --- | ---: | --- |",
+  ...rows.map(
+    (r) =>
+      `| ${r.title} | ${r.play && r.play !== "空地址" ? "✅" : "—"} | ${r.home} | ${r.cat} | ${r.detail || "—"} | ${(r.ms / 1000).toFixed(1)}s | ${(r.err || "").replace(/\|/g, "\\|")} |`
+  ),
+  "",
+].join("\n");
+
 if (outFile) {
   fs.writeFileSync(outFile, JSON.stringify(rows, null, 2));
   console.log("结果已写入 " + outFile);
+}
+if (mdFile) {
+  fs.writeFileSync(mdFile, md);
+  console.log("Markdown 已写入 " + mdFile);
+}
+if (process.env.GITHUB_STEP_SUMMARY) {
+  try {
+    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + "\n");
+  } catch (e) {}
 }
