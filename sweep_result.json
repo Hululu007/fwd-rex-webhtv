@@ -7,7 +7,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 721,
+    "ms": 661,
     "err": "Cloudflare 拦截，请开境外 VPN 或配置 PROXY_BASE / 全局参数「反代前缀」"
   },
   {
@@ -18,7 +18,7 @@
     "cat": 20,
     "detail": "1线路/1集",
     "play": "https://video.twimg.com/amplify_video/1737439611356594176/vid/avc1/1920x1080/Tzh",
-    "ms": 4130,
+    "ms": 2195,
     "err": ""
   },
   {
@@ -29,7 +29,7 @@
     "cat": 30,
     "detail": "无详情条目",
     "play": "",
-    "ms": 1253,
+    "ms": 1108,
     "err": "未解析到播放地址（可能被站点拦截）"
   },
   {
@@ -37,10 +37,10 @@
     "title": "AV&国产 - Cartoonporno",
     "url": "https://fwd.uou.qzz.io/widgets/Cartoonporno_TuT.js",
     "home": 7,
-    "cat": 46,
+    "cat": 47,
     "detail": "1线路/1集",
     "play": "https://toon.flix.qzz.io/p?u=https%3A%2F%2Fwww.cartoonporno.cc%2Fjmpres%2F30%2Cg",
-    "ms": 2328,
+    "ms": 2686,
     "err": ""
   },
   {
@@ -51,7 +51,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 905,
+    "ms": 752,
     "err": "分类为空"
   },
   {
@@ -62,7 +62,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 681,
+    "ms": 612,
     "err": "Cloudflare 拦截(403)。请任选其一：\n① 全局参数「Cookie(过CF)」：浏览器打开 jable.tv 通过人机验证后，F12→网络→点任意请求→请求头里复制完整 Cookie（必须含 cf_clearance，几十到上百字符）\n② 全局参数「反代前缀」：填你的反代如 https://你的域名/p\n③ 设备开境外 VPN 后再试\n注意：日志里若只有 Cookie=language=zh_CN 说明没填有效 Cookie，过不了 CF"
   },
   {
@@ -73,7 +73,7 @@
     "cat": 1,
     "detail": "无详情条目",
     "play": "",
-    "ms": 923,
+    "ms": 933,
     "err": "该站点未提供可解析的播放信息"
   },
   {
@@ -81,10 +81,10 @@
     "title": "AV&国产 - Pornhub",
     "url": "https://fwd.uou.qzz.io/widgets/Pornhub_TuT.js",
     "home": 6,
-    "cat": 43,
+    "cat": 44,
     "detail": "1线路/1集",
-    "play": "https://hv-h.phncdn.com/hls/c6251/videos/202608/03/57648515/1080P_4000K_57648515",
-    "ms": 5158,
+    "play": "https://hv-h.phncdn.com/hls/c6541/videos/202610/06/64929895/1080P_4000K_64929895",
+    "ms": 5122,
     "err": ""
   },
   {
@@ -95,7 +95,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 693,
+    "ms": 700,
     "err": "Cloudflare 拦截(403)。请任选其一：\n① 全局参数「Cookie(过CF)」：浏览器打开 supjav.com 通过验证后，F12→网络→请求头复制完整 Cookie（必须含 cf_clearance）\n② 全局参数「反代前缀」或 PROXY_BASE\n③ 设备开境外 VPN\n注意：空 Cookie 无法过 CF"
   },
   {
@@ -106,7 +106,7 @@
     "cat": 24,
     "detail": "无详情条目",
     "play": "",
-    "ms": 2800,
+    "ms": 4128,
     "err": "未解析到播放地址（可能被站点拦截）"
   },
   {
@@ -114,10 +114,10 @@
     "title": "AV&国产 - Xvideos",
     "url": "https://fwd.uou.qzz.io/widgets/Xvideos_TuT.js",
     "home": 5,
-    "cat": 47,
+    "cat": 48,
     "detail": "无详情条目",
     "play": "",
-    "ms": 3158,
+    "ms": 3080,
     "err": "未解析到播放地址（可能被站点拦截）"
   },
   {
@@ -127,8 +127,8 @@
     "home": 7,
     "cat": 48,
     "detail": "1线路/1集",
-    "play": "https://roiu.uou.qzz.io/hls?id=cmvpp0f32001xs6txxi95h90u",
-    "ms": 2783,
+    "play": "https://roiu.uou.qzz.io/hls?id=cmvr516hb0000s6vq3x4a9v5t",
+    "ms": 2667,
     "err": ""
   },
   {
@@ -139,7 +139,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 82925,
+    "ms": 42568,
     "err": "分类为空"
   },
   {
@@ -149,8 +149,8 @@
     "home": 12,
     "cat": 12,
     "detail": "1线路/1集",
-    "play": "https://honeypeach.cc/hls/missav/m3u8?t=gAAAAABq3-GeD1uKWeza6lI3MRTZ5rFtNA2_v_Vo",
-    "ms": 3796,
+    "play": "https://honeypeach.cc/hls/missav/m3u8?t=gAAAAABq4TEkAjhEk7i2GUyVbrEXH2Dcig8_XLoV",
+    "ms": 8677,
     "err": ""
   },
   {
@@ -160,8 +160,8 @@
     "home": 6,
     "cat": 60,
     "detail": "1线路/1集",
-    "play": "https://m.892539.xyz/play.php?site_id=20&source_id=257169",
-    "ms": 1391,
+    "play": "https://m.892539.xyz/play.php?site_id=20&source_id=70969",
+    "ms": 1445,
     "err": ""
   },
   {
@@ -172,7 +172,7 @@
     "cat": 20,
     "detail": "1线路/1集",
     "play": "https://dash.madou.club/videos/68ff2021d2f708714780a8c1/index.m3u8?token=eyJhbGc",
-    "ms": 2078,
+    "ms": 1707,
     "err": ""
   },
   {
@@ -181,9 +181,9 @@
     "url": "https://fwd.uou.qzz.io/widgets/Crdj_TuT.js",
     "home": 4,
     "cat": 22,
-    "detail": "1线路/2集",
+    "detail": "1线路/3集",
     "play": "空地址",
-    "ms": 1853,
+    "ms": 1361,
     "err": ""
   },
   {
@@ -191,10 +191,10 @@
     "title": "短剧 - FlickReels",
     "url": "https://fwd.uou.qzz.io/widgets/FlickReels_TuT.js",
     "home": 10,
-    "cat": 27,
+    "cat": 28,
     "detail": "1线路/11集",
     "play": "https://zshipricf.farsunpteltd.net/playlet-hls/1789453007_hls_98593.m3u8?verify=",
-    "ms": 2798,
+    "ms": 3423,
     "err": ""
   },
   {
@@ -202,10 +202,10 @@
     "title": "短剧 - ReelShort",
     "url": "https://fwd.uou.qzz.io/widgets/ReelShort_TuT.js",
     "home": 2,
-    "cat": 125,
+    "cat": 126,
     "detail": "1线路/8集",
     "play": "https://v-mps.crazymaplestudios.com/70dca018b5a671f181fce7e7c7690102/video/fdd52",
-    "ms": 1974,
+    "ms": 2371,
     "err": ""
   },
   {
@@ -216,7 +216,7 @@
     "cat": 10,
     "detail": "1线路/4集",
     "play": "https://secure-content.vigloo.com/media/us000/pa0/s01/e001/7bdd447928224c7abc048",
-    "ms": 3052,
+    "ms": 2258,
     "err": ""
   },
   {
@@ -224,10 +224,10 @@
     "title": "短剧 - 橙果",
     "url": "https://fwd.uou.qzz.io/widgets/Chengguo_TuT.js",
     "home": 6,
-    "cat": 10,
+    "cat": 11,
     "detail": "1线路/3集",
     "play": "https://hls.tpbbwcc.cn/videos5/f53a9f3f7cf574e97316690816b659b8/f53a9f3f7cf574e9",
-    "ms": 3938,
+    "ms": 2163,
     "err": ""
   },
   {
@@ -238,7 +238,7 @@
     "cat": 24,
     "detail": "1线路/1集",
     "play": "https://api-r8x4n6pk.rt3wjw6.com/media/dramas/2086/episode-1-2da7b2ba-cd12-4b1f-",
-    "ms": 1204,
+    "ms": 714,
     "err": ""
   },
   {
@@ -249,7 +249,7 @@
     "cat": 20,
     "detail": "1线路/7集",
     "play": "空地址",
-    "ms": 1588,
+    "ms": 1306,
     "err": ""
   },
   {
@@ -258,9 +258,9 @@
     "url": "https://fwd.uou.qzz.io/widgets/Yeguo_TuT.js",
     "home": 6,
     "cat": 15,
-    "detail": "1线路/2集",
-    "play": "https://op.udhhzr.cn/videos5/4b682fee3eb1c327686507abca0fff6e/4b682fee3eb1c32768",
-    "ms": 3047,
+    "detail": "1线路/1集",
+    "play": "https://op.udhhzr.cn/videos5/44309f81e2942ce8323c916ae309ac93/44309f81e2942ce832",
+    "ms": 1549,
     "err": ""
   },
   {
@@ -271,7 +271,7 @@
     "cat": 20,
     "detail": "1线路/21集",
     "play": "https://yd-hls.hzjvlo.cn/videos5/3287ec047679c8dd9e50c7968361afce/3287ec047679c8",
-    "ms": 7261,
+    "ms": 5997,
     "err": ""
   },
   {
@@ -282,7 +282,7 @@
     "cat": 41,
     "detail": "1线路/1集",
     "play": "https://short.dnf.dpdns.org/hddj/m3u8?id=f9693b8abd034434&ep=1",
-    "ms": 1560,
+    "ms": 1915,
     "err": ""
   },
   {
@@ -290,11 +290,11 @@
     "title": "影视 - 剧屋",
     "url": "https://fwd.uou.qzz.io/widgets/juwu_TuT.js",
     "home": 4,
-    "cat": 24,
-    "detail": "1线路/8集",
-    "play": "https://play.hhuus.com/play/dNkEyV8e/index.m3u8",
-    "ms": 1800,
-    "err": ""
+    "cat": 0,
+    "detail": "",
+    "play": "",
+    "ms": 40445,
+    "err": "API 非 JSON"
   },
   {
     "id": "forward.ikanbot.tut",
@@ -303,8 +303,8 @@
     "home": 5,
     "cat": 24,
     "detail": "29线路/1集",
-    "play": "https://play.xluuss.com/play/av2YQ8La/index.m3u8",
-    "ms": 1861,
+    "play": "https://v.gsuus.com/play/dwpEVDze/index.m3u8",
+    "ms": 631,
     "err": ""
   },
   {
@@ -315,7 +315,7 @@
     "cat": 24,
     "detail": "无详情条目",
     "play": "",
-    "ms": 16758,
+    "ms": 14296,
     "err": "未解析到播放地址（可能被站点拦截）"
   },
   {
@@ -326,7 +326,7 @@
     "cat": 10,
     "detail": "1线路/1集",
     "play": "https://mv.gzlcl.com/api/v2/dsdy/dsdy_IieYkjo17wliva8zZMSNLOin2w7VBhiOeNN17g3EqO",
-    "ms": 3280,
+    "ms": 3971,
     "err": ""
   },
   {
@@ -334,10 +334,10 @@
     "title": "影视 - 韩剧巴士",
     "url": "https://fwd.uou.qzz.io/widgets/Hanju84_TuT.js",
     "home": 7,
-    "cat": 32,
+    "cat": 31,
     "detail": "1线路/36集",
     "play": "https://c1.rrcdnbf6.com/video/jizhiyishengshenghuodierji/第01集/index.m3u8",
-    "ms": 2999,
+    "ms": 2777,
     "err": ""
   },
   {
@@ -348,7 +348,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 514,
+    "ms": 507,
     "err": "分类为空"
   },
   {
@@ -359,7 +359,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 51271,
+    "ms": 50794,
     "err": "木偶当前域名均无法访问，请稍后重试或手动指定域名"
   },
   {
@@ -370,7 +370,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 4146,
+    "ms": 4466,
     "err": "玩偶当前域名均无法访问，请稍后重试或手动指定域名"
   },
   {
@@ -381,7 +381,7 @@
     "cat": 0,
     "detail": "",
     "play": "",
-    "ms": 463,
+    "ms": 458,
     "err": "共享账号保存失败，请更新宿主后重试"
   },
   {
@@ -392,7 +392,7 @@
     "cat": 1,
     "detail": "无详情条目",
     "play": "",
-    "ms": 194,
+    "ms": 221,
     "err": "该站点未提供可解析的播放信息"
   },
   {
@@ -403,7 +403,7 @@
     "cat": 1,
     "detail": "无详情条目",
     "play": "",
-    "ms": 245,
+    "ms": 207,
     "err": "该站点未提供可解析的播放信息"
   }
 ]
